@@ -28,25 +28,30 @@ body{font-family:Arial,sans-serif;background:#f0f4f8;display:flex;flex-direction
 .sidebar-lbl{font-size:10px;color:#5a7a9a;padding:8px 16px 4px}
 .main{flex:1;padding:14px;overflow-y:auto;min-width:0}
 .section{display:none}.section.active{display:block}
+
+/* KPI */
 .kpi-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:14px}
 .kpi{background:#fff;border-radius:10px;padding:12px 14px;text-align:center;border-top:3px solid #1A3557;box-shadow:0 1px 4px rgba(0,0,0,.07)}
 .kpi.gold{border-top-color:#c8a84b}.kpi.green{border-top-color:#1E8449}.kpi.red{border-top-color:#C0392B}.kpi.teal{border-top-color:#0E7C7B}
 .kpi-lbl{font-size:10px;color:#6b7280;margin-bottom:5px;font-weight:500}
 .kpi-num{font-size:22px;font-weight:700}
 .kpi-num.navy{color:#1A3557}.kpi-num.green{color:#1E8449}.kpi-num.red{color:#C0392B}.kpi-num.teal{color:#0E7C7B}
+
+/* ADMIN CARDS - gradient bar حسب النسبة */
 .admin-row{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:14px}
-.admin-card{background:#fff;border-radius:10px;padding:12px;box-shadow:0 1px 4px rgba(0,0,0,.07)}
-.a-name{font-size:12px;font-weight:700;margin-bottom:4px}
-.a-pct{font-size:20px;font-weight:700;margin-bottom:2px}
+.admin-card{background:#fff;border-radius:10px;padding:14px;box-shadow:0 1px 4px rgba(0,0,0,.07);border-top:3px solid #1A3557}
+.a-name{font-size:12px;font-weight:700;color:#1A2E4A;margin-bottom:4px}
+.a-pct{font-size:22px;font-weight:700;margin-bottom:2px}
 .a-detail{font-size:11px;color:#6b7280}
-.a-bar{height:5px;border-radius:3px;background:#e5e7eb;margin-top:6px;overflow:hidden}
-.a-fill{height:100%;border-radius:3px}
-.a-amira{border-top:3px solid #2471A3}.a-amira .a-name,.a-amira .a-pct{color:#2471A3}.a-amira .a-fill{background:#2471A3}
-.a-ahmed{border-top:3px solid #1E8449}.a-ahmed .a-name,.a-ahmed .a-pct{color:#1E8449}.a-ahmed .a-fill{background:#1E8449}
-.a-madona{border-top:3px solid #C0392B}.a-madona .a-name,.a-madona .a-pct{color:#C0392B}.a-madona .a-fill{background:#C0392B}
+.a-bar{height:8px;border-radius:4px;background:#e5e7eb;margin-top:8px;overflow:hidden}
+.a-fill{height:100%;border-radius:4px;transition:width .4s}
+
+/* TASK SELECTOR */
 .task-selector{background:#fff;border-radius:10px;padding:12px 16px;margin-bottom:14px;box-shadow:0 1px 4px rgba(0,0,0,.07);display:flex;align-items:center;gap:12px;flex-wrap:wrap}
 .task-selector label{font-size:13px;font-weight:700;color:#1A2E4A;white-space:nowrap}
 .task-selector select{flex:1;min-width:180px;padding:7px 10px;border-radius:8px;border:1px solid #D1D5DB;font-size:13px;color:#111;background:#fff}
+
+/* PENDING TABLE */
 .pending-section{background:#fff;border-radius:10px;padding:14px;margin-bottom:14px;box-shadow:0 1px 4px rgba(0,0,0,.07)}
 .pending-hdr{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
 .pending-title{font-size:14px;font-weight:700;color:#1A2E4A}
@@ -55,13 +60,11 @@ body{font-family:Arial,sans-serif;background:#f0f4f8;display:flex;flex-direction
 .pending-table th{background:#1A3557;color:#fff;padding:8px 10px;text-align:right;font-weight:600}
 .pending-table td{padding:7px 10px;border-bottom:1px solid #F3F4F6;text-align:right}
 .pending-table tr:hover td{background:#F8FAFC}
-.pending-table tr.amira td{border-right:3px solid #2471A3}
-.pending-table tr.ahmed td{border-right:3px solid #1E8449}
-.pending-table tr.madona td{border-right:3px solid #C0392B}
-.tag{font-size:10px;padding:2px 7px;border-radius:6px;font-weight:600}
-.tag.amira{background:#DBEAFE;color:#1E40AF}.tag.ahmed{background:#DCFCE7;color:#166534}.tag.madona{background:#FCE7F3;color:#9D174D}
+.admin-tag{font-size:10px;padding:2px 7px;border-radius:6px;font-weight:600;background:#E8EDF2;color:#1A3557}
+
+/* TASK CARD */
 .task-card{background:#fff;border-radius:10px;padding:14px;margin-bottom:10px;box-shadow:0 1px 4px rgba(0,0,0,.07);border-right:4px solid #1A3557}
-.task-card.done-card{border-right-color:#1E8449;opacity:.8}.task-card.cancelled-card{border-right-color:#9CA3AF;opacity:.65}
+.task-card.done-card{border-right-color:#1E8449;opacity:.85}.task-card.cancelled-card{border-right-color:#9CA3AF;opacity:.65}
 .tc-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px;gap:8px}
 .tc-name{font-size:14px;font-weight:700;color:#1A2E4A}
 .tc-meta{font-size:11px;color:#6b7280;margin-top:3px}
@@ -70,62 +73,62 @@ body{font-family:Arial,sans-serif;background:#f0f4f8;display:flex;flex-direction
 .btn-ic.edit{color:#1A3557;border-color:#1A3557}.btn-ic.del{color:#C0392B;border-color:#C0392B}
 .badge{font-size:11px;padding:3px 9px;border-radius:12px;font-weight:600}
 .badge.active{background:#FEF9C3;color:#854D0E}.badge.done{background:#DCFCE7;color:#166534}.badge.cancelled{background:#F3F4F6;color:#6B7280}
-.tc-phases{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
-.tc-phase{font-size:11px;padding:3px 10px;border-radius:8px;background:#EFF6FF;color:#1D4ED8;border:1px solid #BFDBFE}
-.prog-wrap{display:flex;align-items:center;gap:8px}
-.pbar{flex:1;height:6px;border-radius:3px;background:#e5e7eb;overflow:hidden}
-.pbar-fill{height:100%;border-radius:3px;background:#1E8449}
+.prog-wrap{display:flex;align-items:center;gap:8px;margin-top:6px}
+.pbar{flex:1;height:7px;border-radius:4px;background:#e5e7eb;overflow:hidden}
+.pbar-fill{height:100%;border-radius:4px}
 .pbar-txt{font-size:11px;color:#6b7280;white-space:nowrap}
+
+/* FORM */
 .form-card{background:#fff;border-radius:10px;padding:16px;margin-bottom:12px;box-shadow:0 1px 4px rgba(0,0,0,.07)}
 .form-hdr{font-size:15px;font-weight:700;color:#1A2E4A;margin-bottom:14px;padding-bottom:8px;border-bottom:2px solid #EBF5FB}
 .field{margin-bottom:12px}
 .field label{font-size:12px;font-weight:600;color:#374151;display:block;margin-bottom:5px}
 .field input,.field select,.field textarea{width:100%;padding:8px 11px;border-radius:8px;border:1px solid #D1D5DB;font-size:13px;color:#111;background:#fff}
 .field input:focus,.field select:focus{outline:none;border-color:#2471A3}
-.phases-wrap{display:flex;flex-direction:column;gap:7px}
-.ph-row{display:flex;gap:6px}
-.ph-row input{flex:1}
-.rm-btn{padding:6px 10px;border-radius:6px;border:1px solid #D1D5DB;background:#F9FAFB;cursor:pointer;color:#6B7280}
-.add-ph-btn{width:100%;margin-top:6px;padding:7px;border-radius:8px;border:1.5px dashed #0E7C7B;background:none;color:#0E7C7B;font-size:13px;cursor:pointer;font-weight:600}
 .btn-save{width:100%;padding:10px;border-radius:8px;border:none;background:linear-gradient(135deg,#1A3557,#2471A3);color:#fff;font-size:14px;font-weight:700;cursor:pointer;margin-top:8px}
 .btn-cancel-edit{width:100%;padding:8px;border-radius:8px;border:1px solid #D1D5DB;background:#F9FAFB;color:#374151;font-size:13px;cursor:pointer;margin-top:6px}
+
+/* FACILITIES SELECTOR */
 .facs-selector{border:1px solid #D1D5DB;border-radius:8px;padding:10px;max-height:260px;overflow-y:auto;background:#FAFAFA}
 .facs-selector-hdr{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid #E5E7EB}
 .facs-selector-hdr span{font-size:12px;color:#6b7280;font-weight:600}
 .facs-btns{display:flex;gap:5px}
-.facs-btns button{font-size:11px;padding:3px 8px;border-radius:6px;border:1px solid #D1D5DB;background:#fff;cursor:pointer;color:#374151}
+.facs-btns button{font-size:11px;padding:3px 8px;border-radius:6px;border:1px solid #D1D5DB;background:#fff;cursor:pointer}
 .fac-group{margin-bottom:8px}
-.fac-group-title{font-size:11px;font-weight:700;padding:2px 8px;border-radius:4px;margin-bottom:4px;display:inline-block}
-.fac-group-title.amira{background:#DBEAFE;color:#1E40AF}
-.fac-group-title.ahmed{background:#DCFCE7;color:#166534}
-.fac-group-title.madona{background:#FCE7F3;color:#9D174D}
+.fac-group-title{font-size:11px;font-weight:700;padding:2px 8px;border-radius:4px;margin-bottom:4px;display:inline-block;background:#E8EDF2;color:#1A3557}
 .fac-check-row{display:flex;align-items:center;gap:7px;padding:3px 6px;border-radius:4px;cursor:pointer}
 .fac-check-row:hover{background:#F3F4F6}
 .fac-check-row input{width:14px;height:14px;cursor:pointer;flex-shrink:0;accent-color:#1A3557}
 .fac-check-row label{font-size:12px;color:#111;cursor:pointer;flex:1}
+
+/* TRACKING - الجزء المحدث */
 .track-card{background:#fff;border-radius:10px;padding:14px;box-shadow:0 1px 4px rgba(0,0,0,.07)}
 .filter-row{display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap}
 .f-btn{font-size:11px;padding:5px 12px;border-radius:12px;border:1px solid #D1D5DB;background:#F9FAFB;cursor:pointer;color:#374151;font-weight:500}
 .f-btn.active{background:#1A3557;color:#fff;border-color:#1A3557}
-.jiha-card{display:flex;align-items:center;border-radius:8px;margin-bottom:6px;padding:8px 12px;border-right:4px solid;gap:8px;flex-wrap:wrap}
-.jiha-card.amira{background:#EBF5FB;border-right-color:#2471A3}
-.jiha-card.ahmed{background:#EAFAF1;border-right-color:#1E8449}
-.jiha-card.madona{background:#FDEDEC;border-right-color:#C0392B}
+
+/* كارت الجهة - بدون ألوان أدمن، الألوان بتعبر عن حالة الرد */
+.jiha-card{display:flex;align-items:center;border-radius:8px;margin-bottom:5px;padding:8px 12px;gap:8px;flex-wrap:wrap;background:#fff;border:1px solid #E5E7EB;transition:background .15s}
+.jiha-card.responded{background:#F0FDF4;border-color:#86EFAC}
+.jiha-card.not-responded{background:#FFF;border-color:#E5E7EB}
+.jiha-card.rejected{background:#FFF5F5;border-color:#FCA5A5}
 .jiha-num{font-size:11px;color:#9CA3AF;font-weight:700;min-width:22px;text-align:center}
-.jiha-name{font-size:13px;font-weight:700;flex:1;color:#1A2E4A;min-width:130px}
-.jiha-admin-tag{font-size:10px;padding:2px 7px;border-radius:6px;font-weight:600;white-space:nowrap}
-.jiha-admin-tag.amira{background:#2471A3;color:#fff}
-.jiha-admin-tag.ahmed{background:#1E8449;color:#fff}
-.jiha-admin-tag.madona{background:#C0392B;color:#fff}
-.phase-dots{display:flex;gap:6px}
-.phase-dot-wrap{display:flex;flex-direction:column;align-items:center}
-.dot{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;cursor:pointer;font-weight:700;border:2px solid;transition:all .12s;flex-shrink:0}
-.dot.wait{background:#fff;border-color:#D1D5DB;color:#9CA3AF}
-.dot.yes{background:#DCFCE7;border-color:#16A34A;color:#166534}
-.dot.no{background:#FEE2E2;border-color:#DC2626;color:#991B1B}
-.dot-lbl{font-size:9px;color:#6b7280;text-align:center;margin-top:2px;max-width:34px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.jiha-name{font-size:13px;font-weight:600;flex:1;color:#1A2E4A;min-width:130px}
+.jiha-admin-tag{font-size:10px;padding:2px 7px;border-radius:6px;font-weight:600;white-space:nowrap;background:#E8EDF2;color:#1A3557}
+
+/* زر الرد - ثلاث حالات واضحة */
+.resp-btn{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px;cursor:pointer;font-weight:700;border:2px solid;transition:all .15s;flex-shrink:0}
+.resp-btn.wait{background:#F9FAFB;border-color:#D1D5DB;color:#9CA3AF}
+.resp-btn.yes{background:#16A34A;border-color:#16A34A;color:#fff}
+.resp-btn.no{background:#DC2626;border-color:#DC2626;color:#fff}
+.resp-status{font-size:11px;font-weight:600;min-width:55px;text-align:center}
+.resp-status.wait{color:#9CA3AF}
+.resp-status.yes{color:#16A34A}
+.resp-status.no{color:#DC2626}
 .date-pick{font-size:11px;border:1px solid #E5E7EB;border-radius:6px;padding:3px 5px;width:118px;color:#111;background:#fff;cursor:pointer}
 .n-inp{font-size:11px;border:1px solid #E5E7EB;border-radius:6px;padding:4px 6px;width:85px;color:#111;background:#fff}
+
+/* PERF */
 .perf-card{background:#fff;border-radius:10px;padding:14px;box-shadow:0 1px 4px rgba(0,0,0,.07);margin-bottom:10px}
 .perf-hdr{font-size:13px;font-weight:700;color:#1A2E4A;margin-bottom:10px}
 .jiha-perf-row{display:flex;align-items:center;gap:8px;padding:5px 0;border-bottom:1px solid #F3F4F6}
@@ -133,6 +136,7 @@ body{font-family:Arial,sans-serif;background:#f0f4f8;display:flex;flex-direction
 .jp-bar-wrap{width:110px;height:7px;background:#e5e7eb;border-radius:3px;overflow:hidden}
 .jp-bar{height:100%;border-radius:3px}
 .jp-pct{font-size:11px;font-weight:700;min-width:34px;text-align:left}
+
 .empty{text-align:center;padding:40px 20px;color:#9CA3AF}
 .empty-icon{font-size:36px;margin-bottom:10px}
 .empty p{font-size:14px;margin-bottom:14px}
@@ -172,6 +176,7 @@ body{font-family:Arial,sans-serif;background:#f0f4f8;display:flex;flex-direction
     <div class="hdr-left"><div class="user-badge">👤 مسئول النظام</div></div>
   </div>
 </div>
+
 <div class="app-body">
   <div class="sidebar">
     <div style="height:10px"></div>
@@ -185,7 +190,9 @@ body{font-family:Arial,sans-serif;background:#f0f4f8;display:flex;flex-direction
     <div class="sidebar-lbl">التقارير</div>
     <div class="sidebar-item" onclick="showTab('perf')">📊 أداء الجهات</div>
   </div>
+
   <div class="main">
+    <!-- DASHBOARD -->
     <div id="tab-dash" class="section active">
       <div class="task-selector">
         <label>📊 عرض نتائج:</label>
@@ -200,9 +207,24 @@ body{font-family:Arial,sans-serif;background:#f0f4f8;display:flex;flex-direction
         <div class="kpi teal"><div class="kpi-lbl">نسبة الاستجابة</div><div class="kpi-num teal" id="k-pct">—</div></div>
       </div>
       <div class="admin-row">
-        <div class="admin-card a-amira"><div class="a-name">د/ أميرة</div><div class="a-pct" id="pa-amira">—</div><div class="a-detail" id="da-amira">21 جهة</div><div class="a-bar"><div class="a-fill" id="ba-amira" style="width:0%"></div></div></div>
-        <div class="admin-card a-ahmed"><div class="a-name">د/ أحمد</div><div class="a-pct" id="pa-ahmed">—</div><div class="a-detail" id="da-ahmed">21 جهة</div><div class="a-bar"><div class="a-fill" id="ba-ahmed" style="width:0%"></div></div></div>
-        <div class="admin-card a-madona"><div class="a-name">د/ مادونا</div><div class="a-pct" id="pa-madona">—</div><div class="a-detail" id="da-madona">19 جهة</div><div class="a-bar"><div class="a-fill" id="ba-madona" style="width:0%"></div></div></div>
+        <div class="admin-card">
+          <div class="a-name">د/ أميرة</div>
+          <div class="a-pct" id="pa-amira" style="color:#1A3557">—</div>
+          <div class="a-detail" id="da-amira">21 جهة</div>
+          <div class="a-bar"><div class="a-fill" id="ba-amira" style="width:0%"></div></div>
+        </div>
+        <div class="admin-card">
+          <div class="a-name">د/ أحمد</div>
+          <div class="a-pct" id="pa-ahmed" style="color:#1A3557">—</div>
+          <div class="a-detail" id="da-ahmed">21 جهة</div>
+          <div class="a-bar"><div class="a-fill" id="ba-ahmed" style="width:0%"></div></div>
+        </div>
+        <div class="admin-card">
+          <div class="a-name">د/ مادونا</div>
+          <div class="a-pct" id="pa-madona" style="color:#1A3557">—</div>
+          <div class="a-detail" id="da-madona">19 جهة</div>
+          <div class="a-bar"><div class="a-fill" id="ba-madona" style="width:0%"></div></div>
+        </div>
       </div>
       <div class="pending-section">
         <div class="pending-hdr">
@@ -219,24 +241,25 @@ body{font-family:Arial,sans-serif;background:#f0f4f8;display:flex;flex-direction
       </div>
       <div id="dash-cards"></div>
     </div>
+
+    <!-- TASKS -->
     <div id="tab-tasks" class="section"><div id="tasks-cards"></div></div>
+
+    <!-- ADD -->
     <div id="tab-add" class="section">
       <div class="form-card">
         <div class="form-hdr" id="form-hdr">➕ إضافة مهمة جديدة</div>
         <input type="hidden" id="edit-id">
-        <div class="field"><label>اسم المهمة *</label><input type="text" id="f-name" placeholder="مثال: محضر المطابقة مع الهيئة"></div>
+        <div class="field"><label>اسم المهمة *</label><input type="text" id="f-name" placeholder="مثال: محضر المطابقة — حضور"></div>
         <div class="field"><label>الموعد النهائي</label><input type="date" id="f-deadline"></div>
         <div class="field"><label>حالة المهمة</label>
-          <select id="f-status"><option value="active">جارية</option><option value="done">مكتملة</option><option value="cancelled">ملغاة</option></select>
+          <select id="f-status">
+            <option value="active">جارية</option>
+            <option value="done">مكتملة</option>
+            <option value="cancelled">ملغاة</option>
+          </select>
         </div>
         <div class="field"><label>ملاحظات</label><textarea id="f-notes" rows="2" placeholder="أي تعديلات أو ملاحظات..."></textarea></div>
-        <div class="field">
-          <label>مراحل المتابعة *</label>
-          <div class="phases-wrap" id="phases-wrap">
-            <div class="ph-row"><input type="text" placeholder="المرحلة الأولى" class="ph-inp"><button class="rm-btn" onclick="rmPhase(this)">✕</button></div>
-          </div>
-          <button class="add-ph-btn" onclick="addPhase()">＋ أضيفي مرحلة</button>
-        </div>
         <div class="field">
           <label>الجهات المعنية بالمهمة</label>
           <div class="facs-selector">
@@ -254,14 +277,16 @@ body{font-family:Arial,sans-serif;background:#f0f4f8;display:flex;flex-direction
         <button class="btn-cancel-edit" id="cancel-edit-btn" style="display:none" onclick="resetForm()">إلغاء التعديل</button>
       </div>
     </div>
+
+    <!-- TRACKING -->
     <div id="tab-track" class="section">
       <div class="track-card">
         <div class="form-hdr">✏️ تسجيل الردود</div>
         <p style="font-size:12px;color:#6b7280;margin-bottom:12px">
-          اضغطي على الدائرة: &nbsp;
-          <span style="background:#F9FAFB;border:2px solid #D1D5DB;border-radius:50%;padding:1px 6px;font-size:11px">؟</span> لسه &nbsp;
-          <span style="background:#DCFCE7;border:2px solid #16A34A;border-radius:50%;padding:1px 6px;font-size:11px;color:#166534">✓</span> تم &nbsp;
-          <span style="background:#FEE2E2;border:2px solid #DC2626;border-radius:50%;padding:1px 6px;font-size:11px;color:#991B1B">✗</span> لم يتم
+          اضغطي على الزر لتغيير الحالة:
+          <span style="background:#F9FAFB;border:2px solid #D1D5DB;border-radius:6px;padding:1px 8px;font-size:12px;color:#9CA3AF;font-weight:700">؟</span> لسه &nbsp;
+          <span style="background:#16A34A;border-radius:6px;padding:1px 8px;font-size:12px;color:#fff;font-weight:700">✓</span> تم الرد &nbsp;
+          <span style="background:#DC2626;border-radius:6px;padding:1px 8px;font-size:12px;color:#fff;font-weight:700">✗</span> لم يتم
         </p>
         <div class="field" style="margin-bottom:10px">
           <select id="track-sel" onchange="renderTrack()"><option value="">اختاري مهمة...</option></select>
@@ -271,16 +296,19 @@ body{font-family:Arial,sans-serif;background:#f0f4f8;display:flex;flex-direction
           <button class="f-btn" onclick="setF('amira',this)">د/ أميرة</button>
           <button class="f-btn" onclick="setF('ahmed',this)">د/ أحمد</button>
           <button class="f-btn" onclick="setF('madona',this)">د/ مادونا</button>
-          <button class="f-btn" onclick="setF('pending',this)">⏳ لم يتم الرد فقط</button>
+          <button class="f-btn" onclick="setF('pending',this)">⏳ لم يتم فقط</button>
+          <button class="f-btn" onclick="setF('done',this)">✅ تم الرد فقط</button>
         </div>
         <div id="track-list"></div>
       </div>
     </div>
+
+    <!-- PERFORMANCE -->
     <div id="tab-perf" class="section">
       <div class="kpi-grid" style="grid-template-columns:repeat(3,1fr)">
         <div class="kpi"><div class="kpi-lbl">إجمالي الجهات</div><div class="kpi-num navy">61</div></div>
-        <div class="kpi green"><div class="kpi-lbl">الجهات المنتظمة (≥70%)</div><div class="kpi-num green" id="perf-good">—</div></div>
-        <div class="kpi red"><div class="kpi-lbl">الجهات المتأخرة (&lt;40%)</div><div class="kpi-num red" id="perf-bad">—</div></div>
+        <div class="kpi green"><div class="kpi-lbl">الجهات المنتظمة (≥75%)</div><div class="kpi-num green" id="perf-good">—</div></div>
+        <div class="kpi red"><div class="kpi-lbl">الجهات المتأخرة (&lt;50%)</div><div class="kpi-num red" id="perf-bad">—</div></div>
       </div>
       <div class="perf-card">
         <div class="perf-hdr">📊 نسبة استجابة كل جهة عبر كل المهام</div>
@@ -289,7 +317,9 @@ body{font-family:Arial,sans-serif;background:#f0f4f8;display:flex;flex-direction
     </div>
   </div>
 </div>
+
 <div class="footer">مديرية الشئون الصحية بالقاهرة · <span>إدارة الشراء الموحد</span> · نظام متابعة المهام</div>
+
 <div id="modal" style="display:none"><div class="modal-bg"><div class="modal">
   <div class="modal-title">⚠️ تأكيد الحذف</div>
   <div class="modal-msg" id="modal-msg"></div>
@@ -298,11 +328,13 @@ body{font-family:Arial,sans-serif;background:#f0f4f8;display:flex;flex-direction
     <button class="btn-del-confirm" onclick="confirmDel()">حذف نهائياً</button>
   </div>
 </div></div></div>
-<div class="save-ind" id="save-ind">✔ تم الحفظ في Firebase</div>
+<div class="save-ind" id="save-ind">✔ تم الحفظ</div>
 <div class="loading" id="loading"><div class="spinner"></div><p>جاري الاتصال بـ Firebase...</p></div>
+
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.0/firebase-app.js";
 import { getFirestore,collection,doc,setDoc,getDocs,deleteDoc } from "https://www.gstatic.com/firebasejs/11.0.0/firebase-firestore.js";
+
 const firebaseConfig={apiKey:"AIzaSyBCtp4GXKpu87b2ZVaMnPQyU91OVgUVcKg",authDomain:"upa-tracker.firebaseapp.com",projectId:"upa-tracker",storageBucket:"upa-tracker.firebasestorage.app",messagingSenderId:"472301470383",appId:"1:472301470383:web:14d66fe10432f385894a5a"};
 const app=initializeApp(firebaseConfig);
 const db=getFirestore(app);
@@ -371,20 +403,36 @@ const FACS=[
 ];
 const TOTAL=FACS.length;
 const DEF_EXCL=["منطقة غرب القاهرة الطبية","الحجر الصحي","منطقة حدائق العاصمة الطبية"];
+
 let tasks=[],cFilter="all",pendingFilter="all",delId=null;
 const aLabel=a=>a==="amira"?"د/ أميرة":a==="ahmed"?"د/ أحمد":"د/ مادونا";
 const sLabel=s=>s==="done"?"مكتملة":s==="cancelled"?"ملغاة":"جارية";
 const sBadge=s=>s==="done"?"done":s==="cancelled"?"cancelled":"active";
-function showSaved(){const el=document.getElementById("save-ind");el.style.display="block";setTimeout(()=>el.style.display="none",2500);}
+
+// gradient color حسب النسبة
+function pctColor(pct){
+  if(pct>=75)return"#16A34A";
+  if(pct>=50)return"#F59E0B";
+  return"#DC2626";
+}
+function pctGradient(pct){
+  const c=pctColor(pct);
+  return`linear-gradient(90deg, ${c} 0%, ${c}CC 100%)`;
+}
+
+function showSaved(){const el=document.getElementById("save-ind");el.style.display="block";setTimeout(()=>el.style.display="none",2000);}
+
 function getActiveFacs(task){
   if(!task.excludedFacs||!task.excludedFacs.length)return FACS.map((_,i)=>i);
   return FACS.map((_,i)=>i).filter(i=>!task.excludedFacs.includes(FACS[i].n));
 }
+
 function calcStats(task){
   const af=getActiveFacs(task);
   const resp=af.filter(i=>task.responses&&task.responses[i]&&task.responses[i].p0===1).length;
   return{resp,pend:af.length-resp,pct:af.length?Math.round(resp/af.length*100):0,total:af.length};
 }
+
 function facPct(fi){
   const active=tasks.filter(t=>t.status==="active");
   if(!active.length)return-1;
@@ -392,13 +440,14 @@ function facPct(fi){
   if(!rel.length)return-1;
   return Math.round(rel.filter(t=>t.responses&&t.responses[fi]&&t.responses[fi].p0===1).length/rel.length*100);
 }
+
 function buildFacsChecklist(excl=[]){
   const wrap=document.getElementById("facs-checklist");
   const g={amira:[],ahmed:[],madona:[]};
   FACS.forEach((f,i)=>g[f.a].push({...f,i}));
   const names={amira:"د/ أميرة",ahmed:"د/ أحمد",madona:"د/ مادونا"};
   wrap.innerHTML=Object.keys(g).map(a=>`<div class="fac-group">
-    <div class="fac-group-title ${a}">${names[a]}</div>
+    <div class="fac-group-title">${names[a]}</div>
     ${g[a].map(f=>`<div class="fac-check-row">
       <input type="checkbox" id="fc${f.i}" data-name="${f.n}" ${excl.includes(f.n)?"":'checked'} onchange="updFacsCount()">
       <label for="fc${f.i}">${f.n}${DEF_EXCL.includes(f.n)?' <small style="color:#9CA3AF">(افتراضياً مستبعدة)</small>':""}</label>
@@ -406,27 +455,28 @@ function buildFacsChecklist(excl=[]){
   </div>`).join("");
   updFacsCount();
 }
+
 function updFacsCount(){
-  const n=document.querySelectorAll("#facs-checklist input:checked").length;
-  document.getElementById("facs-count").textContent=n+" جهة محددة";
+  document.getElementById("facs-count").textContent=document.querySelectorAll("#facs-checklist input:checked").length+" جهة محددة";
 }
+
 window.selectAllFacs=()=>{document.querySelectorAll("#facs-checklist input").forEach(c=>c.checked=true);updFacsCount();};
-window.applyDefaultExclusion=()=>{
-  document.querySelectorAll("#facs-checklist input").forEach(c=>{c.checked=!DEF_EXCL.includes(c.dataset.name);});
-  updFacsCount();
-};
-function getExcluded(){
-  return [...document.querySelectorAll("#facs-checklist input:not(:checked)")].map(c=>c.dataset.name);
-}
+window.applyDefaultExclusion=()=>{document.querySelectorAll("#facs-checklist input").forEach(c=>{c.checked=!DEF_EXCL.includes(c.dataset.name);});updFacsCount();};
+function getExcluded(){return[...document.querySelectorAll("#facs-checklist input:not(:checked)")].map(c=>c.dataset.name);}
+
 function renderDash(){
   const sel=document.getElementById("dash-task-sel").value;
   const active=tasks.filter(t=>t.status==="active");
   document.getElementById("k-total").textContent=tasks.length;
   if(!active.length){
     ["k-resp","k-pend","k-pct"].forEach(id=>document.getElementById(id).textContent="—");
-    ["amira","ahmed","madona"].forEach(a=>{document.getElementById("pa-"+a).textContent="—";document.getElementById("ba-"+a).style.width="0%";});
+    ["amira","ahmed","madona"].forEach(a=>{
+      document.getElementById("pa-"+a).textContent="—";
+      document.getElementById("ba-"+a).style.width="0%";
+    });
     const e=`<div class="empty"><div class="empty-icon">📋</div><p>لا توجد مهام نشطة بعد</p><button class="btn-start" onclick="showTab('add')">أضيفي أول مهمة</button></div>`;
-    document.getElementById("dash-cards").innerHTML=e;document.getElementById("tasks-cards").innerHTML=e;
+    document.getElementById("dash-cards").innerHTML=e;
+    document.getElementById("tasks-cards").innerHTML=e;
     document.getElementById("pending-table-wrap").innerHTML=`<div class="empty"><div class="empty-icon">📋</div><p>أضيفي مهمة أولاً</p></div>`;
     return;
   }
@@ -439,19 +489,28 @@ function renderDash(){
   document.getElementById("k-resp").textContent=ls.resp+" / "+ls.total;
   document.getElementById("k-pend").textContent=ls.pend;
   document.getElementById("k-pct").textContent=avg+"%";
+
+  // أداء الأدمن مع gradient
   ["amira","ahmed","madona"].forEach(a=>{
     const mf=FACS.map((f,i)=>({...f,i})).filter(f=>f.a===a);
     const mr=ct.reduce((s,t)=>{const af=getActiveFacs(t);return s+mf.filter(f=>af.includes(f.i)&&t.responses&&t.responses[f.i]&&t.responses[f.i].p0===1).length;},0);
     const mt=ct.reduce((s,t)=>{const af=getActiveFacs(t);return s+mf.filter(f=>af.includes(f.i)).length;},0);
     const pct=mt?Math.round(mr/mt*100):0;
+    const col=pctColor(pct);
     document.getElementById("pa-"+a).textContent=pct+"%";
-    document.getElementById("da-"+a).textContent="تم الرد: "+Math.round(mr/ct.length)+" من "+mf.length;
-    document.getElementById("ba-"+a).style.width=pct+"%";
+    document.getElementById("pa-"+a).style.color=col;
+    document.getElementById("da-"+a).textContent="تم الرد: "+Math.round(mr/(ct.length||1))+" من "+mf.length;
+    const bar=document.getElementById("ba-"+a);
+    bar.style.width=pct+"%";
+    bar.style.background=pctGradient(pct);
   });
+
   document.getElementById("dash-cards").innerHTML=tasks.map(renderCard).join("");
   document.getElementById("tasks-cards").innerHTML=document.getElementById("dash-cards").innerHTML;
-  renderPendingTable(ct);renderPerf();
+  renderPendingTable(ct);
+  renderPerf();
 }
+
 function renderPendingTable(ct){
   let pending=FACS.map((f,i)=>{
     const rel=ct.filter(t=>getActiveFacs(t).includes(i));
@@ -461,28 +520,39 @@ function renderPendingTable(ct){
   }).filter(Boolean);
   if(pendingFilter!=="all")pending=pending.filter(f=>f.a===pendingFilter);
   document.getElementById("pending-count").textContent=pending.length+" جهة";
-  if(!pending.length){document.getElementById("pending-table-wrap").innerHTML=`<p style="text-align:center;padding:20px;color:#1E8449;font-size:13px;font-weight:700">✅ كل الجهات المعنية استجابت!</p>`;return;}
+  if(!pending.length){
+    document.getElementById("pending-table-wrap").innerHTML=`<p style="text-align:center;padding:20px;color:#16A34A;font-size:13px;font-weight:700">✅ كل الجهات المعنية استجابت!</p>`;
+    return;
+  }
   document.getElementById("pending-table-wrap").innerHTML=`<table class="pending-table">
     <thead><tr><th>#</th><th>اسم الجهة</th><th>الأدمن</th><th>لم ترد في</th></tr></thead>
-    <tbody>${pending.map((f,i)=>`<tr class="${f.a}"><td>${i+1}</td><td style="font-weight:600">${f.n}</td><td><span class="tag ${f.a}">${aLabel(f.a)}</span></td><td style="color:#C0392B;font-weight:700">${f.nr}/${f.tot} مهمة</td></tr>`).join("")}</tbody>
+    <tbody>${pending.map((f,i)=>`<tr><td>${i+1}</td><td style="font-weight:600">${f.n}</td>
+      <td><span class="admin-tag">${aLabel(f.a)}</span></td>
+      <td style="color:#DC2626;font-weight:700">${f.nr}/${f.tot} مهمة</td></tr>`).join("")}</tbody>
   </table>`;
 }
+
 function renderCard(t){
-  const s=calcStats(t);const dl=t.deadline?new Date(t.deadline).toLocaleDateString("ar-EG"):"—";
-  const ex=t.excludedFacs&&t.excludedFacs.length?` (مستبعد: ${t.excludedFacs.length})`:"";
+  const s=calcStats(t);
+  const dl=t.deadline?new Date(t.deadline).toLocaleDateString("ar-EG"):"—";
+  const col=pctColor(s.pct);
+  const ex=t.excludedFacs&&t.excludedFacs.length?` · مستبعد: ${t.excludedFacs.length}`:"";
   return`<div class="task-card ${t.status==="done"?"done-card":t.status==="cancelled"?"cancelled-card":""}">
     <div class="tc-top">
       <div><div class="tc-name">${t.name}</div><div class="tc-meta">الموعد: ${dl} · معنية: ${s.total} جهة${ex}</div></div>
-      <div class="tc-actions"><span class="badge ${sBadge(t.status)}">${sLabel(t.status)}</span>
+      <div class="tc-actions">
+        <span class="badge ${sBadge(t.status)}">${sLabel(t.status)}</span>
         <button class="btn-ic edit" onclick="editTask('${t.id}')">✏️ تعديل</button>
         <button class="btn-ic del" onclick="askDel('${t.id}')">🗑️ حذف</button>
       </div>
     </div>
-    <div class="tc-phases">${(t.phases||[]).map(p=>`<span class="tc-phase">${p}</span>`).join("")}</div>
-    <div class="prog-wrap"><div class="pbar"><div class="pbar-fill" style="width:${s.pct}%"></div></div>
-    <div class="pbar-txt">تم الرد: ${s.resp} من ${s.total} (${s.pct}%)</div></div>
+    <div class="prog-wrap">
+      <div class="pbar"><div class="pbar-fill" style="width:${s.pct}%;background:${pctGradient(s.pct)}"></div></div>
+      <div class="pbar-txt" style="color:${col};font-weight:700">تم الرد: ${s.resp} من ${s.total} (${s.pct}%)</div>
+    </div>
   </div>`;
 }
+
 function renderTrack(){
   const sel=document.getElementById("track-sel").value;
   const el=document.getElementById("track-list");
@@ -494,35 +564,45 @@ function renderTrack(){
   else if(cFilter==="ahmed")facs=facs.filter(f=>f.a==="ahmed");
   else if(cFilter==="madona")facs=facs.filter(f=>f.a==="madona");
   else if(cFilter==="pending")facs=facs.filter(f=>!task.responses||!task.responses[f.i]||task.responses[f.i].p0!==1);
+  else if(cFilter==="done")facs=facs.filter(f=>task.responses&&task.responses[f.i]&&task.responses[f.i].p0===1);
   if(!facs.length){el.innerHTML=`<p style="text-align:center;padding:16px;color:#9CA3AF;font-size:13px">لا توجد جهات</p>`;return;}
   el.innerHTML=facs.map((f,idx)=>{
     const r=(task.responses&&task.responses[f.i])||{p0:0,date:"",note:""};
-    const dots=(task.phases||[]).map((p,pi)=>{
-      const s=r["p"+pi]||0;
-      return`<div class="phase-dot-wrap"><div class="dot ${s===1?"yes":s===2?"no":"wait"}" title="${p}" onclick="toggleDot('${task.id}',${f.i},${pi})">${s===1?"✓":s===2?"✗":"؟"}</div><div class="dot-lbl">${p.length>7?p.substring(0,7)+"..":p}</div></div>`;
-    }).join("");
-    return`<div class="jiha-card ${f.a}">
+    const s=r.p0||0;
+    const btnCls=s===1?"yes":s===2?"no":"wait";
+    const btnIc=s===1?"✓":s===2?"✗":"؟";
+    const statusTxt=s===1?"تم الرد":s===2?"لم يتم":"لسه";
+    const cardCls=s===1?"responded":s===2?"rejected":"not-responded";
+    return`<div class="jiha-card ${cardCls}">
       <div class="jiha-num">${idx+1}</div>
       <div class="jiha-name">${f.n}</div>
-      <span class="jiha-admin-tag ${f.a}">${aLabel(f.a)}</span>
-      <div class="phase-dots">${dots}</div>
+      <span class="jiha-admin-tag">${aLabel(f.a)}</span>
+      <div class="resp-btn ${btnCls}" onclick="toggleDot('${task.id}',${f.i},0)">${btnIc}</div>
+      <div class="resp-status ${btnCls}">${statusTxt}</div>
       <input class="date-pick" type="date" value="${r.date||""}" onchange="updField('${task.id}',${f.i},'date',this.value)">
       <input class="n-inp" type="text" placeholder="ملاحظة" value="${r.note||""}" onchange="updField('${task.id}',${f.i},'note',this.value)">
     </div>`;
   }).join("");
 }
+
 function renderPerf(){
   const active=tasks.filter(t=>t.status==="active");
   const el=document.getElementById("perf-list");
   if(!active.length){el.innerHTML=`<div class="empty"><div class="empty-icon">📊</div><p>أضيفي مهام لتظهر بيانات الأداء</p></div>`;return;}
   const fd=FACS.map((f,i)=>{const p=facPct(i);return{...f,i,pct:p}}).filter(f=>f.pct>=0).sort((a,b)=>b.pct-a.pct);
-  document.getElementById("perf-good").textContent=fd.filter(f=>f.pct>=70).length;
-  document.getElementById("perf-bad").textContent=fd.filter(f=>f.pct<40).length;
+  document.getElementById("perf-good").textContent=fd.filter(f=>f.pct>=75).length;
+  document.getElementById("perf-bad").textContent=fd.filter(f=>f.pct<50).length;
   el.innerHTML=fd.map(f=>{
-    const c=f.pct>=70?"#1E8449":f.pct>=40?"#c8a84b":"#C0392B";
-    return`<div class="jiha-perf-row"><div class="jp-name">${f.n}</div><span class="jiha-admin-tag ${f.a}" style="font-size:10px">${aLabel(f.a)}</span><div class="jp-bar-wrap"><div class="jp-bar" style="width:${f.pct}%;background:${c}"></div></div><div class="jp-pct" style="color:${c}">${f.pct}%</div></div>`;
+    const c=pctColor(f.pct);
+    return`<div class="jiha-perf-row">
+      <div class="jp-name">${f.n}</div>
+      <span class="admin-tag" style="font-size:10px">${aLabel(f.a)}</span>
+      <div class="jp-bar-wrap"><div class="jp-bar" style="width:${f.pct}%;background:${c}"></div></div>
+      <div class="jp-pct" style="color:${c}">${f.pct}%</div>
+    </div>`;
   }).join("");
 }
+
 async function loadTasks(){
   document.getElementById("loading").style.display="flex";
   try{
@@ -533,37 +613,42 @@ async function loadTasks(){
   }catch(e){alert("خطأ في الاتصال: "+e.message);}
   document.getElementById("loading").style.display="none";
 }
+
 window.saveTask=async function(){
   const name=document.getElementById("f-name").value.trim();
   const deadline=document.getElementById("f-deadline").value;
   const status=document.getElementById("f-status").value;
   const notes=document.getElementById("f-notes").value.trim();
-  const phases=[...document.querySelectorAll(".ph-inp")].map(i=>i.value.trim()).filter(v=>v);
   const excludedFacs=getExcluded();
   if(!name){alert("اكتبي اسم المهمة");return;}
-  if(!phases.length){alert("أضيفي مرحلة واحدة");return;}
   const eid=document.getElementById("edit-id").value;
   const responses=Object.fromEntries(FACS.map((_,i)=>[i,{p0:0,date:"",note:""}]));
   if(eid){
     const ex=tasks.find(t=>t.id===eid);
-    await setDoc(doc(db,"tasks",eid),{name,deadline,status,notes,phases,excludedFacs,responses:ex?ex.responses:responses,updatedAt:Date.now()});
+    await setDoc(doc(db,"tasks",eid),{name,deadline,status,notes,excludedFacs,responses:ex?ex.responses:responses,updatedAt:Date.now()});
   }else{
-    await setDoc(doc(db,"tasks","task_"+Date.now()),{name,deadline,status,notes,phases,excludedFacs,responses,createdAt:Date.now(),updatedAt:Date.now()});
+    await setDoc(doc(db,"tasks","task_"+Date.now()),{name,deadline,status,notes,excludedFacs,responses,createdAt:Date.now(),updatedAt:Date.now()});
   }
   showSaved();await loadTasks();resetForm();showTab("tasks");
 };
+
 window.toggleDot=async function(tid,fi,pi){
   const t=tasks.find(t=>t.id===tid);if(!t)return;
   if(!t.responses)t.responses={};
   if(!t.responses[fi])t.responses[fi]={p0:0,date:"",note:""};
-  const c=t.responses[fi]["p"+pi]||0;t.responses[fi]["p"+pi]=c===0?1:c===1?2:0;
-  await setDoc(doc(db,"tasks",tid),t);showSaved();renderTrack();renderDash();
+  const c=t.responses[fi].p0||0;
+  t.responses[fi].p0=c===0?1:c===1?2:0;
+  await setDoc(doc(db,"tasks",tid),t);
+  showSaved();renderTrack();renderDash();
 };
+
 window.updField=async function(tid,fi,f,v){
   const t=tasks.find(t=>t.id===tid);if(!t)return;
   if(!t.responses[fi])t.responses[fi]={p0:0,date:"",note:""};
-  t.responses[fi][f]=v;await setDoc(doc(db,"tasks",tid),t);showSaved();
+  t.responses[fi][f]=v;
+  await setDoc(doc(db,"tasks",tid),t);showSaved();
 };
+
 window.editTask=function(id){
   const t=tasks.find(t=>t.id===id);if(!t)return;
   document.getElementById("edit-id").value=id;
@@ -574,22 +659,26 @@ window.editTask=function(id){
   document.getElementById("form-hdr").textContent="✏️ تعديل المهمة";
   document.getElementById("save-lbl").textContent="✔ حفظ التعديلات";
   document.getElementById("cancel-edit-btn").style.display="block";
-  document.getElementById("phases-wrap").innerHTML=(t.phases||[]).map(p=>`<div class="ph-row"><input type="text" class="ph-inp" value="${p}"><button class="rm-btn" onclick="rmPhase(this)">✕</button></div>`).join("");
-  buildFacsChecklist(t.excludedFacs||[]);showTab("add");
+  buildFacsChecklist(t.excludedFacs||[]);
+  showTab("add");
 };
+
 window.askDel=function(id){delId=id;const t=tasks.find(t=>t.id===id);document.getElementById("modal-msg").textContent=`هل أنتِ متأكدة من حذف "${t.name}"؟`;document.getElementById("modal").style.display="flex";};
 window.confirmDel=async function(){await deleteDoc(doc(db,"tasks",delId));closeModal();await loadTasks();};
 window.closeModal=()=>{document.getElementById("modal").style.display="none";delId=null;};
+
 window.resetForm=function(){
-  document.getElementById("edit-id").value="";document.getElementById("f-name").value="";
-  document.getElementById("f-deadline").value="";document.getElementById("f-status").value="active";
-  document.getElementById("f-notes").value="";document.getElementById("form-hdr").textContent="➕ إضافة مهمة جديدة";
-  document.getElementById("save-lbl").textContent="✔ إضافة المهمة";document.getElementById("cancel-edit-btn").style.display="none";
-  document.getElementById("phases-wrap").innerHTML=`<div class="ph-row"><input type="text" placeholder="المرحلة الأولى" class="ph-inp"><button class="rm-btn" onclick="rmPhase(this)">✕</button></div>`;
+  document.getElementById("edit-id").value="";
+  document.getElementById("f-name").value="";
+  document.getElementById("f-deadline").value="";
+  document.getElementById("f-status").value="active";
+  document.getElementById("f-notes").value="";
+  document.getElementById("form-hdr").textContent="➕ إضافة مهمة جديدة";
+  document.getElementById("save-lbl").textContent="✔ إضافة المهمة";
+  document.getElementById("cancel-edit-btn").style.display="none";
   buildFacsChecklist(DEF_EXCL);
 };
-window.addPhase=function(){const w=document.getElementById("phases-wrap"),d=document.createElement("div");d.className="ph-row";d.innerHTML=`<input type="text" placeholder="مرحلة جديدة" class="ph-inp"><button class="rm-btn" onclick="rmPhase(this)">✕</button>`;w.appendChild(d);};
-window.rmPhase=function(btn){if(document.querySelectorAll(".ph-row").length>1)btn.parentElement.remove();};
+
 window.updateSels=function(){
   const ts=document.getElementById("track-sel"),cur=ts.value;
   ts.innerHTML='<option value="">اختاري مهمة...</option>'+tasks.map(t=>`<option value="${t.id}">${t.name}</option>`).join("");
@@ -598,12 +687,22 @@ window.updateSels=function(){
   ds.innerHTML='<option value="all">كل المهام النشطة</option>'+tasks.filter(t=>t.status==="active").map(t=>`<option value="${t.id}">${t.name}</option>`).join("");
   if(tasks.find(t=>t.id===dc))ds.value=dc;
 };
-window.setF=function(f,btn){cFilter=f;document.querySelectorAll("#tab-track .f-btn").forEach(b=>b.classList.remove("active"));btn.classList.add("active");renderTrack();};
+
+window.setF=function(f,btn){
+  cFilter=f;
+  document.querySelectorAll("#tab-track .f-btn").forEach(b=>b.classList.remove("active"));
+  btn.classList.add("active");renderTrack();
+};
+
 window.setPendingFilter=function(f,btn){
-  pendingFilter=f;document.querySelectorAll("#pending-filter-row .f-btn").forEach(b=>b.classList.remove("active"));btn.classList.add("active");
-  const sel=document.getElementById("dash-task-sel").value;const active=tasks.filter(t=>t.status==="active");
+  pendingFilter=f;
+  document.querySelectorAll("#pending-filter-row .f-btn").forEach(b=>b.classList.remove("active"));
+  btn.classList.add("active");
+  const sel=document.getElementById("dash-task-sel").value;
+  const active=tasks.filter(t=>t.status==="active");
   renderPendingTable(sel==="all"?active:active.filter(t=>t.id===sel)||active);
 };
+
 window.showTab=function(name){
   document.querySelectorAll(".section").forEach(s=>s.classList.remove("active"));
   document.querySelectorAll(".sidebar-item").forEach(n=>n.classList.remove("active"));
@@ -611,7 +710,9 @@ window.showTab=function(name){
   const idx=["dash","tasks","add","track","perf"].indexOf(name);
   if(idx>=0)document.querySelectorAll(".sidebar-item")[idx].classList.add("active");
 };
-window.renderTrack=renderTrack;window.renderDash=renderDash;
+
+window.renderTrack=renderTrack;
+window.renderDash=renderDash;
 loadTasks();
 </script>
 </body>
